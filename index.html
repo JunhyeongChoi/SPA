@@ -44,72 +44,74 @@
         });
     </script>
     <style>
-        #mainbox {
-            margin: 0 auto;
-            padding-top: 120px;
-            width: 1000px;
-        }
+        @media screen and (min-width: 960px) {
+            #mainbox {
+                margin: 0 auto;
+                padding-top: 120px;
+                width: 1000px;
+            }
 
-        #nav {
-            position: fixed;
-            top: 0;
-            left: 240px;
-            right: 240px;
+            #nav {
+                position: fixed;
+                top: 0;
+                left: 240px;
+                right: 240px;
 
-            height: 75px;
-            padding: 1rem;
-            font-weight: bold;
-            background-color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+                height: 75px;
+                padding: 1rem;
+                font-weight: bold;
+                background-color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
 
-        li {
-            float: right;
-        }
+            li {
+                float: right;
+            }
 
-        li a {
-            display: block;
+            li a {
+                display: block;
 
-            color: #000000;
-            padding: 8px;
-            text-decoration: none;
-            text-align: center;
-            font-weight: bold;
-        }
+                color: #000000;
+                padding: 8px;
+                text-decoration: none;
+                text-align: center;
+                font-weight: bold;
+            }
 
-        li a.current {
-            background-color: #FF6347;
-            color: white;
-        }
+            li a.current {
+                background-color: #FF6347;
+                color: white;
+            }
 
-        li a:hover:not(.current) {
-            background-color: #CD853F;
-            color: white;
-        }
+            li a:hover:not(.current) {
+                background-color: #CD853F;
+                color: white;
+            }
 
-        img {
-            float: left;
-            margin-right: 30px;
-        }
+            img {
+                float: left;
+                margin-right: 30px;
+            }
 
-        footer {
-            margin-left: 100px;
-            width: 1000px;
-            position: absolute;
-            bottom: 0;
-            text-align: center;
-            background-color: #1e1e1e;
-            font-size: 12px;
-            color: #919191;
+            footer {
+                margin-left: 100px;
+                width: 1000px;
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                background-color: #1e1e1e;
+                font-size: 12px;
+                color: #919191;
+            }
         }
     </style>
 </head>
