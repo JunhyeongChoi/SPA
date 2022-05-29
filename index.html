@@ -11,67 +11,255 @@
     <script>
         $(document).ready(function () {
 
-            $('#contact').css('display', 'none')
-            $('#about').css('display', 'none')
+            $('#contact').css('display', 'none');
+            $('#about').css('display', 'none');
+
+            $('button').click(function () {
+                $('.dropdown-content a').slideToggle('normal');
+            });
 
             $('#contact-nav').on('click', function () {
-                $(this).attr('class', 'current')
-                $('#home-nav').removeAttr('class')
-                $('#about-nav').removeAttr('class')
-                $('#contact').css('display', 'block')
-                $('#home').css('display', 'none')
-                $('#about').css('display', 'none')
-            })
+                $(this).attr('class', 'current');
+                $('#home-nav').removeAttr('class');
+                $('#about-nav').removeAttr('class');
+                $('#contact').css('display', 'block');
+                $('#home').css('display', 'none');
+                $('#about').css('display', 'none');
+            });
 
             $('#about-nav').on('click', function () {
-                $(this).attr('class', 'current')
-                $('#home-nav').removeAttr('class')
-                $('#contact-nav').removeAttr('class')
-                $('#about').css('display', 'block')
-                $('#home').css('display', 'none')
-                $('#contact').css('display', 'none')
-            })
+                $(this).attr('class', 'current');
+                $('#home-nav').removeAttr('class');
+                $('#contact-nav').removeAttr('class');
+                $('#about').css('display', 'block');
+                $('#home').css('display', 'none');
+                $('#contact').css('display', 'none');
+            });
 
             $('#home-nav').on('click', function () {
-                $(this).attr('class', 'current')
-                $('#contact-nav').removeAttr('class')
-                $('#about-nav').removeAttr('class')
-                $('#home').css('display', 'block')
-                $('#contact').css('display', 'none')
-                $('#about').css('display', 'none')
-            })
+                $(this).attr('class', 'current');
+                $('#contact-nav').removeAttr('class');
+                $('#about-nav').removeAttr('class');
+                $('#home').css('display', 'block');
+                $('#contact').css('display', 'none');
+                $('#about').css('display', 'none');
+            });
+
+            $('#drop-home').on('click', function () {
+                $('#home').css('display', 'block');
+                $('#contact').css('display', 'none');
+                $('#about').css('display', 'none');
+            });
+
+            $('#drop-about').on('click', function () {
+                $('#about').css('display', 'block');
+                $('#contact').css('display', 'none');
+                $('#home').css('display', 'none');
+            });
+
+            $('#drop-contact').on('click', function () {
+                $('#contact').css('display', 'block');
+                $('#home').css('display', 'none');
+                $('#about').css('display', 'none');
+            });
 
         });
     </script>
     <style>
         @media screen and (max-width: 767px) {
             #mainbox {
+                min-height: 100%;
+                position: relative;
                 margin: 0 auto;
                 width: 100%;
             }
 
-            img {
-                margin: 0 auto;
-                width: 200px; height: 250px;
+            ul li {
+                list-style: none;
+
             }
 
-            
+            .dropbtn_icon {
+                text-align: center;
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .dropbtn {
+                height: 50px;
+                margin-top: 25px;
+                margin-right: 20px;
+                padding-top: 0;
+            }
+
+            .dropdown {
+                text-align: center;
+                position: fixed;
+                top: 0;
+                right: 10px;
+
+                height: 75px;
+                width: 95%;
+                padding: 1rem;
+                font-weight: bold;
+                background-color: white;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .main {
+                position: absolute;
+                right: 0;
+            }
+
+            .dropdown-content {
+                background-color: rgb(250, 244, 244);
+            }
+
+            .dropdown-content a {
+                display: block;
+                text-decoration: none;
+                color: rgb(85, 85, 85);
+            }
+
+            #nav {
+                display: none;
+            }
+
+            #align {
+                text-align: center;
+            }
+
+            img {
+                margin: 0 auto;
+                margin-top: 130px;
+                width: 200px;
+                height: 250px;
+            }
+
+            #section-body {
+                margin-top: 170px;
+            }
+
+            footer {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                border-top: 1px solid rgb(196, 188, 188);
+                font-size: 14px;
+                color: #777;
+            }
+
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 959px) {
+            #mainbox {
+                min-height: 100%;
+                position: relative;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            ul li {
+                list-style: none;
+
+            }
+
+            .dropbtn_icon {
+                text-align: center;
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .dropbtn {
+                height: 50px;
+                margin-top: 25px;
+                margin-right: 20px;
+                padding-top: 0;
+            }
+
+            .dropdown {
+                text-align: center;
+                position: fixed;
+                top: 0;
+                right: 10px;
+
+                height: 75px;
+                width: 95%;
+                padding: 1rem;
+                font-weight: bold;
+                background-color: white;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .main {
+                position: absolute;
+                right: 0;
+            }
+
+            .dropdown-content {
+                background-color: rgb(250, 244, 244);
+            }
+
+            .dropdown-content a {
+                display: block;
+                text-decoration: none;
+                color: rgb(85, 85, 85);
+            }
+
+            #nav {
+                display: none;
+            }
+
+            #align {
+                text-align: center;
+            }
+
+            img {
+                margin: 0 auto;
+                margin-top: 130px;
+                width: 200px;
+                height: 250px;
+            }
+
+            footer {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                border-top: 1px solid rgb(196, 188, 188);
+                font-size: 14px;
+                color: #777;
+            }
         }
 
         @media screen and (min-width: 960px) {
             #mainbox {
+                position: relative;
                 margin: 0 auto;
                 padding-top: 120px;
                 width: 1000px;
             }
 
+            .dropdown {
+                display: none;
+            }
+
+            #hide {
+                display: none;
+            }
+
             #nav {
                 position: fixed;
                 top: 0;
-                left: 240px;
-                right: 240px;
+                right: 16%;
 
                 height: 75px;
+                width: 65%;
                 padding: 1rem;
                 font-weight: bold;
                 background-color: white;
@@ -112,26 +300,45 @@
             }
 
             img {
-                width: 200px; height: 250px;
+                width: 200px;
+                height: 250px;
                 float: left;
                 margin-right: 30px;
             }
-        }
 
-        footer {
-                width: 99%;
+            footer {
                 position: absolute;
+                left: 0;
                 bottom: 0;
+                width: 100%;
                 text-align: center;
                 border-top: 1px solid rgb(196, 188, 188);
                 font-size: 14px;
                 color: #777;
             }
+        }
     </style>
 </head>
 
 <body>
     <div id="mainbox">
+
+        <div class="dropdown">
+            <span style="float: left;">
+                <h1>Junhyeong</h1>
+            </span>
+            <div class="main">
+                <button class="dropbtn">
+                    <span class="dropbtn_icon">Menu</span>
+                </button>
+                <div class="dropdown-content">
+                    <a id="drop-home" href="#home">Home</a>
+                    <a id="drop-about" href="#about">About me</a>
+                    <a id="drop-contact" href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+
         <div id="nav-parent">
             <div id="nav">
                 <h1>Junhyeong</h1>
@@ -159,25 +366,35 @@
         </section>
 
         <section id="about">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit
-                anim id est laborum.</p>
+            <div id="section-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex
+                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                    eu
+                    fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit
+                    anim id est laborum.</p>
+            </div>
         </section>
 
         <section id="contact">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit
-                anim id est laborum.</p>
+            <div id="section-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex
+                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                    eu
+                    fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit
+                    anim id est laborum.</p>
+            </div>
         </section>
     </div>
 
