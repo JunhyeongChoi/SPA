@@ -139,17 +139,12 @@
 
             #section-body {
                 margin-top: 170px;
+                overflow: hidden;
             }
 
-            footer {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                border-top: 1px solid rgb(196, 188, 188);
-                font-size: 14px;
-                color: #777;
+            #footer-parent {
+                position: relative;
+                height: 400px;
             }
 
         }
@@ -164,7 +159,6 @@
 
             ul li {
                 list-style: none;
-
             }
 
             .dropbtn_icon {
@@ -229,16 +223,11 @@
                 margin-top: 170px;
             }
 
-            footer {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                border-top: 1px solid rgb(196, 188, 188);
-                font-size: 14px;
-                color: #777;
+            #footer-parent {
+                position: relative;
+                height: 490px;
             }
+
         }
 
         @media screen and (min-width: 960px) {
@@ -260,10 +249,10 @@
             #nav {
                 position: fixed;
                 top: 0;
-                right: 16%;
+                right: 0;
 
                 height: 75px;
-                width: 65%;
+                width: 97%;
                 padding: 1rem;
                 font-weight: bold;
                 background-color: white;
@@ -310,16 +299,27 @@
                 margin-right: 30px;
             }
 
-            footer {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                border-top: 1px solid rgb(196, 188, 188);
-                font-size: 14px;
-                color: #777;
+            #text-order {
+                margin-top: 60px;
             }
+
+            #footer-parent {
+                position: relative;
+                height: 525px;
+            }
+
+        }
+
+        footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid rgb(196, 188, 188);
+            font-size: 14px;
+            background-color: white;
+            color: #777;
         }
     </style>
 </head>
@@ -358,15 +358,17 @@
             <div id="align">
                 <img src="pic.jpg">
             </div>
+            <div id="text-order">
             <h2>Interest</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit
-                anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex
+                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit
+                    anim id est laborum.</p>
+            </div>
         </section>
 
         <section id="about">
@@ -402,10 +404,11 @@
         </section>
     </div>
 
-    <footer>
-        <p>Copyright CODE LION All rights reserved. </p>
-    </footer>
-
+    <div id="footer-parent">
+        <footer>
+            <p>Copyright CODE LION All rights reserved. </p>
+        </footer>
+    </div>
 </body>
 
 </html>
