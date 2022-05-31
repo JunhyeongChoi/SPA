@@ -11,8 +11,8 @@
     <script>
         $(document).ready(function () {
 
+            $('#activity').css('display', 'none');
             $('#contact').css('display', 'none');
-            $('#about').css('display', 'none');
 
             $('button').click(function () {
                 $('.dropdown-content a').slideToggle('normal');
@@ -20,47 +20,74 @@
 
             $('#contact-nav').on('click', function () {
                 $(this).attr('class', 'current');
-                $('#home-nav').removeAttr('class');
+                $('#activity-nav').removeAttr('class');
                 $('#about-nav').removeAttr('class');
                 $('#contact').css('display', 'block');
-                $('#home').css('display', 'none');
+                $('#activity').css('display', 'none');
                 $('#about').css('display', 'none');
+                $('#drop-contact').attr('class', 'drop-current');
+                $('#drop-activity').removeAttr('class');
+                $('#drop-about').removeAttr('class');
             });
 
             $('#about-nav').on('click', function () {
                 $(this).attr('class', 'current');
-                $('#home-nav').removeAttr('class');
+                $('#activity-nav').removeAttr('class');
                 $('#contact-nav').removeAttr('class');
                 $('#about').css('display', 'block');
-                $('#home').css('display', 'none');
+                $('#activity').css('display', 'none');
                 $('#contact').css('display', 'none');
+                $('#drop-about').attr('class', 'drop-current');
+                $('#drop-activity').removeAttr('class');
+                $('#drop-contact').removeAttr('class');
             });
 
-            $('#home-nav').on('click', function () {
+            $('#activity-nav').on('click', function () {
                 $(this).attr('class', 'current');
                 $('#contact-nav').removeAttr('class');
                 $('#about-nav').removeAttr('class');
-                $('#home').css('display', 'block');
+                $('#activity').css('display', 'block');
                 $('#contact').css('display', 'none');
                 $('#about').css('display', 'none');
+                $('#drop-activity').attr('class', 'drop-current');
+                $('#drop-contact').removeAttr('class');
+                $('#drop-about').removeAttr('class');
             });
 
-            $('#drop-home').on('click', function () {
-                $('#home').css('display', 'block');
+            $('#drop-activity').on('click', function () {
+                $(this).attr('class', 'drop-current');
+                $('#drop-contact').removeAttr('class');
+                $('#drop-about').removeAttr('class');
+                $('#activity').css('display', 'block');
                 $('#contact').css('display', 'none');
                 $('#about').css('display', 'none');
+                $('#activity-nav').attr('class', 'current');
+                $('#contact-nav').removeAttr('class');
+                $('#about-nav').removeAttr('class');
             });
 
             $('#drop-about').on('click', function () {
+                $(this).attr('class', 'drop-current');
+                $('#drop-activity').removeAttr('class');
+                $('#drop-contact').removeAttr('class');
                 $('#about').css('display', 'block');
                 $('#contact').css('display', 'none');
-                $('#home').css('display', 'none');
+                $('#activity').css('display', 'none');
+                $('#about-nav').attr('class', 'current');
+                $('#activity-nav').removeAttr('class');
+                $('#contact-nav').removeAttr('class');
             });
 
             $('#drop-contact').on('click', function () {
+                $(this).attr('class', 'drop-current');
+                $('#drop-activity').removeAttr('class');
+                $('#drop-about').removeAttr('class');
                 $('#contact').css('display', 'block');
-                $('#home').css('display', 'none');
+                $('#activity').css('display', 'none');
                 $('#about').css('display', 'none');
+                $('#contact-nav').attr('class', 'current');
+                $('#activity-nav').removeAttr('class');
+                $('#about-nav').removeAttr('class');
             });
 
         });
@@ -68,15 +95,15 @@
     <style>
         @media screen and (max-width: 767px) {
             #mainbox {
-                min-height: 100%;
                 position: relative;
                 margin: 0 auto;
+                padding-top: 120px;
+                min-height: 115vh;
                 width: 100%;
             }
 
             ul li {
                 list-style: none;
-
             }
 
             .dropbtn_icon {
@@ -86,6 +113,7 @@
             }
 
             .dropbtn {
+                
                 height: 50px;
                 margin-top: 25px;
                 margin-right: 20px;
@@ -112,6 +140,15 @@
                 right: 0;
             }
 
+            .drop-current {
+                background: #FF6347;
+            }
+
+            .dropdown-content a:hover:not(.current) {
+                background-color: #CD853F;
+                color: white;
+            }
+
             .dropdown-content {
                 background-color: rgb(250, 244, 244);
             }
@@ -119,7 +156,15 @@
             .dropdown-content a {
                 display: block;
                 text-decoration: none;
-                color: rgb(85, 85, 85);
+                color: white;
+
+                display: block;
+
+                color: #000000;
+                padding: 3px;
+                text-decoration: none;
+                text-align: center;
+                font-weight: bold;
             }
 
             #nav {
@@ -130,7 +175,7 @@
                 text-align: center;
             }
 
-            img {
+            #pic {
                 margin: 0 auto;
                 margin-top: 130px;
                 width: 200px;
@@ -142,18 +187,18 @@
                 overflow: hidden;
             }
 
-            #footer-parent {
-                position: relative;
-                height: 400px;
+            #text-order {
+                text-align: center;
             }
 
         }
 
         @media screen and (min-width: 768px) and (max-width: 959px) {
             #mainbox {
-                min-height: 100%;
                 position: relative;
                 margin: 0 auto;
+                padding-top: 120px;
+                min-height: 110vh;
                 width: 100%;
             }
 
@@ -194,6 +239,15 @@
                 right: 0;
             }
 
+            .drop-current {
+                background: #FF6347;
+            }
+
+            .dropdown-content a:hover:not(.current) {
+                background-color: #CD853F;
+                color: white;
+            }
+
             .dropdown-content {
                 background-color: rgb(250, 244, 244);
             }
@@ -201,7 +255,15 @@
             .dropdown-content a {
                 display: block;
                 text-decoration: none;
-                color: rgb(85, 85, 85);
+                color: white;
+
+                display: block;
+
+                color: #000000;
+                padding: 2px;
+                text-decoration: none;
+                text-align: center;
+                font-weight: bold;
             }
 
             #nav {
@@ -212,7 +274,7 @@
                 text-align: center;
             }
 
-            img {
+            #pic {
                 margin: 0 auto;
                 margin-top: 130px;
                 width: 200px;
@@ -223,9 +285,8 @@
                 margin-top: 170px;
             }
 
-            #footer-parent {
-                position: relative;
-                height: 490px;
+            #text-order {
+                text-align: center;
             }
 
         }
@@ -235,6 +296,7 @@
                 position: relative;
                 margin: 0 auto;
                 padding-top: 120px;
+                min-height: 82vh;
                 width: 1000px;
             }
 
@@ -248,17 +310,23 @@
 
             #nav {
                 position: fixed;
-                top: 0;
-                right: 0;
+                top: 0px;
+                left: 0px;
 
                 height: 75px;
-                width: 97%;
+                width: 70%;
                 padding: 1rem;
+                padding-right: 100px;
+                padding-left: 250px;
                 font-weight: bold;
                 background-color: white;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }
+
+            #section-body {
+                margin-top: 100px;
             }
 
             ul {
@@ -292,9 +360,9 @@
                 color: white;
             }
 
-            img {
-                width: 200px;
-                height: 250px;
+            #pic {
+                width: 300px;
+                height: 350px;
                 float: left;
                 margin-right: 30px;
             }
@@ -303,24 +371,22 @@
                 margin-top: 60px;
             }
 
-            #footer-parent {
-                position: relative;
-                height: 525px;
-            }
-
         }
 
         footer {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
             text-align: center;
-            border-top: 1px solid rgb(196, 188, 188);
+            padding-top: 0;
+            border-top: 1px solid #e0e0e0;
             font-size: 14px;
             background-color: white;
             color: #777;
+
+            width: 100%;
+            height: 40px;
+            bottom: 0px;
+            position: absolute;
         }
+
     </style>
 </head>
 
@@ -332,13 +398,15 @@
                 <h1>Junhyeong</h1>
             </span>
             <div class="main">
+                <div id="btn-parent" style="width: 130px;">
                 <button class="dropbtn">
-                    <span class="dropbtn_icon">Menu</span>
+                    <span class="dropbtn_icon"><b>Menu</b></span>
                 </button>
-                <div class="dropdown-content">
-                    <a id="drop-home" href="#home">Home</a>
-                    <a id="drop-about" href="#about">About me</a>
-                    <a id="drop-contact" href="#contact">Contact</a>
+            </div>
+                <div class="dropdown-content" style="width: 111px;">
+                    <a id="drop-about" class="drop-current" href="#About_me">ABOUT ME</a>
+                    <a id="drop-activity" href="#Activity">ACTIVITY</a>
+                    <a id="drop-contact" href="#Contact">CONTACT</a>
                 </div>
             </div>
         </div>
@@ -347,68 +415,56 @@
             <div id="nav">
                 <h1>Junhyeong</h1>
                 <ul>
-                    <li><a id="contact-nav" href="#contact">Contact</a></li>
-                    <li><a id="about-nav" href="#about">About me</a></li>
-                    <li><a id="home-nav" class="current" href="#home">Home</a></li>
+                    <li><a id="contact-nav" href="#Contact">CONTACT</a></li>
+                    <li><a id="activity-nav" href="#Activity">ACTIVITY</a></li>
+                    <li><a id="about-nav" class="current" href="#About_me">ABOUT ME</a></li>
                 </ul>
             </div>
         </div>
 
-        <section id="home">
+        <section id="about">
             <div id="align">
-                <img src="pic.jpg">
+                <img src="pic.jpg" id="pic">
             </div>
             <div id="text-order">
-            <h2>Interest</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex
-                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit
-                    anim id est laborum.</p>
+                <h2> &lt 소개 &gt</h2>
+                <h4>안녕하세요. 저는 2021년에 강원대학교에 입학해 현재 컴퓨터공학과에 재학중입니다. </h4>
+                <h2> &lt 관심 &gt</h2>
+                <h4>저는 현재 웹 개발에 관심있고 그 중에서도 백엔드 개발에 관심이 있습니다. 그래서 Python기반인 Django 프레임워크에 대해서 공부중이고 DRF에 대해서도 공부할 예정입니다. 이후 대외활동을 통해 팀프로젝트도 진행해볼 예정입니다.</h4>
+                <h2> &lt 취미 &gt</h2>
+                <h4>게임 ( League of legends ) , 게임 대회 시청</h4>
+                <h4>영화 시청, 해외 축구 경기 시청</h4><br><h4>&nbsp;</h4>
             </div>
         </section>
 
-        <section id="about">
-            <div id="section-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip
-                    ex
-                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                    eu
-                    fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit
-                    anim id est laborum.</p>
+        <section id="activity">
+            <div id="section-body" style="text-align: center;">
+                <h2>&lt 직접 만들어본 것 &gt</h2>
+                <h4>게시글 작성, 삭제, 댓글, 로그인/로그아웃 기능을 보유한 간단한 블로그를 만들어 본 적이 있습니다.</h4>
+                <h4>인터넷 강의, 책을 보며 Django를 학습하였고, 공부하면서 간단한 블로그를 만들어보았습니다.</h4>
+                <h4>&gt&gt <a href="https://github.com/JunhyeongChoi/blog">Blog</a></h4>
+                <h2>공부중인 것</h2>
+                <h4>하루동안 공부한 내용을 보기 좋게 정리해서 깃허브에 올리고 있습니다.</h4>
+                <h4>현재는 Django에 관한 내용을 복습하며 정리하고 있습니다.</h4>
+                <h4>&gt&gt <a href="https://github.com/JunhyeongChoi/TIL">Github TIL</a></h4><br><h4>&nbsp;</h4>
             </div>
         </section>
 
         <section id="contact">
-            <div id="section-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip
-                    ex
-                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                    eu
-                    fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit
-                    anim id est laborum.</p>
-            </div>
+            <div id="section-body" style="text-align: center;">
+                <h2>&lt Contact me &gt</h2>
+                <a href="https://www.instagram.com/c.jun.hyeong/"><img src="instagram.png" alt="instagram" style="width: 40px; height: 40px;"></a>
+                <a href="https://github.com/JunhyeongChoi"><img src="github.png" alt="github" style="width: 40px; height: 40px;"></a><br><br><br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d403149.85440328805!2d127.184167965625!3d37.86945610000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3562e5c841815175%3A0x641f3d5ba99eaf6b!2z6rCV7JuQ64yA7ZWZ6rWQIOy2mOyynOy6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v1654006949192!5m2!1sko!2skr" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div></h4><br><br><br><h4>&nbsp;</h4>
         </section>
+
+        <footer>
+            <p>Copyright @ 2022. Junhyeong Choi (ajfeh22@kangwon.ac.kr) All rights reserved.</p>
+        </footer>
+
     </div>
 
-    <div id="footer-parent">
-        <footer>
-            <p>Copyright CODE LION All rights reserved. </p>
-        </footer>
-    </div>
 </body>
 
 </html>
